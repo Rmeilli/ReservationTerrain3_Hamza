@@ -16,13 +16,13 @@ namespace BLL
         {
             Emprunt emprunt = new Emprunt()
             {
+
                 
-                Email = model.Email,
-                Nom = model.Nom,
-                Prenom = model.Prenom,
-                Terrain=model.Terrain
+                IdUtilisateur = model.IdUtilisateur,
+                Id = model.Id,
+                IdTerrain=model.IdTerrain
             };
-            emprunt.DateCreation = DateTime.Now;
+            emprunt.Date = DateTime.Now;
             EmpruntRepos empruntRepos = new EmpruntRepos();
             empruntRepos.Create(emprunt);
         }
@@ -36,10 +36,11 @@ namespace BLL
             {
                 EmpruntListe empruntList = new EmpruntListe
                 {
-                    DateCreation = item.DateCreation,
-                    Nom = item.Nom,
-                    Prenom = item.Prenom,
-                    Id = item.Id
+                    Date = item.Date,
+                    Id = item.Id,
+                   
+                    IdUtilisateur = item.IdUtilisateur,
+                    IdTerrain=item.IdTerrain
                 };
                 listvms.Add(empruntList);
             }
